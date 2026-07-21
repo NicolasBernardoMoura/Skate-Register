@@ -1,0 +1,55 @@
+{% extends 'cadastro/base.html' %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+
+    <div class="col-md-6">
+
+        <div class="card shadow border-danger">
+
+            <div class="card-header bg-danger text-white">
+
+                <h3>Excluir Skatista</h3>
+
+            </div>
+
+            <div class="card-body">
+
+                <p class="fs-5">
+
+                    Tem certeza que deseja excluir o skatista
+
+                    <strong>{{ skatista.nome }}</strong>?
+
+                </p>
+
+                <form method="POST">
+
+                    {% csrf_token %}
+
+                    <button class="btn btn-danger">
+
+                        🗑️ Sim, excluir
+
+                    </button>
+
+                    <a href="{% url 'lista_skatistas' %}"
+
+                       class="btn btn-secondary">
+
+                        Cancelar
+
+                    </a>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

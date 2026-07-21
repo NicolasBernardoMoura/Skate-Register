@@ -1,0 +1,76 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skate Register</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'cadastro/css/style.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark shadow">
+
+        <div class="container">
+
+            <a class="navbar-brand d-flex align-items-center" href="/">
+
+                <img src="{% static 'cadastro/imagens/logo.png' %}"
+                    alt="Logo Skate Cadastro"
+                    class="logo">
+
+                <span class="ms-2">Skate Register</span>
+
+            </a>
+
+            <div>
+
+                <a class="btn btn-outline-light me-2" href="/">
+                    Home
+                </a>
+
+                <a class="btn btn-outline-light me-2"
+                   href="{% url 'lista_skatistas' %}">
+                    Skatistas
+                </a>
+
+                <a class="btn btn-danger"
+                    href="{% url 'cadastrar_skatista' %}">
+                    Cadastrar
+                </a>
+
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <main class="container mt-5 flex-grow-1">
+
+        {% block content %}
+
+        {% endblock %}
+
+    </main>
+
+    <footer class="bg-dark text-white text-center py-3">
+
+        © 2026 Skate Register - Projeto desenvolvido com Django
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+    
+
+</body>
+</html>
+

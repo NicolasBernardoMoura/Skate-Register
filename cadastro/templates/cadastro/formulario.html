@@ -1,0 +1,85 @@
+{% extends 'cadastro/base.html' %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+
+    <div class="col-md-8">
+
+        <div class="card shadow">
+
+            <div class="card-header bg-dark text-white">
+
+                <h3>{{ titulo }}</h3>
+
+            </div>
+
+            <div class="card-body">
+
+                <form method="POST" enctype="multipart/form-data">
+
+                    {% csrf_token %}
+
+                    <div class="mb-3">
+                        <label class="form-label">Nome</label>
+                        {{ form.nome }}
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Idade</label>
+                            {{ form.idade }}
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Cidade</label>
+                            {{ form.cidade }}
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Modalidade</label>
+                            {{ form.modalidade }}
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Nível</label>
+                            {{ form.nivel }}
+                        </div>
+
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label">Foto</label>
+                        {{ form.foto }}
+                    </div>
+
+                    <button class="btn btn-success">
+
+                        💾 {{ botao }}
+
+                    </button>
+
+                    <a href="{% url 'lista_skatistas' %}"
+
+                    class="btn btn-secondary">
+
+                        Cancelar
+
+                    </a>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,136 @@
+{% extends 'cadastro/base.html' %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <h1 class="text-center mb-4">Lista de Skatistas</h1>
+
+    <form method="GET" class="mb-4">
+
+        <div class="input-group">
+
+            <input
+                type="text"
+                name="pesquisa"
+                class="form-control"
+                placeholder="Pesquisar skatista..."
+                value="{{ pesquisa }}">
+
+            <button class="btn btn-dark">
+                🔍 Pesquisar
+            </button>
+
+        </div>
+
+    </form>
+
+    <div class="text-end mb-3">
+
+        <a href="{% url 'cadastrar_skatista' %}" class="btn btn-success">
+
+            + Novo Skatista
+
+        </a>
+
+    </div>
+
+    <table class="table table-hover table-bordered align-middle shadow">
+
+        <thead class="table-dark">
+
+            <tr>
+
+                <th>Foto</th>
+                <th>Nome</th>
+                <th>Idade</th>
+                <th>Cidade</th>
+                <th>Modalidade</th>
+                <th>Nível</th>
+                <th>Ações</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            {% for skatista in skatistas %}
+
+            <tr>
+
+                <td>
+
+                    {% if skatista.foto %}
+
+                        <img src="{{ skatista.foto.url }}"
+                             width="70"
+                             class="rounded">
+
+                    {% else %}
+
+                        Sem foto
+
+                    {% endif %}
+
+                </td>
+
+                <td>
+
+                    <a href="{% url 'detalhe_skatista' skatista.id %}">
+
+                        {{ skatista.nome }}
+
+                    </a>
+
+                </td>
+
+                <td>{{ skatista.idade }}</td>
+
+                <td>{{ skatista.cidade }}</td>
+
+                <td>{{ skatista.modalidade }}</td>
+
+                <td>{{ skatista.nivel }}</td>
+
+                <td>
+
+                    <a href="{% url 'editar_skatista' skatista.id %}"
+                       class="btn btn-warning btn-sm">
+
+                        Editar
+
+                    </a>
+
+                    <a href="{% url 'excluir_skatista' skatista.id %}"
+                       class="btn btn-danger btn-sm">
+
+                        Excluir
+
+                    </a>
+
+                </td>
+
+            </tr>
+
+            {% empty %}
+
+            <tr>
+
+                <td colspan="7" class="text-center">
+
+                    Nenhum skatista cadastrado.
+
+                </td>
+
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
+
+    </table>
+
+</div>
+
+{% endblock %}

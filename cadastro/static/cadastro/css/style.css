@@ -1,0 +1,286 @@
+body{
+    background:#f5f5f5;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+/* NAVBAR */
+
+.navbar{
+    box-shadow:0 3px 12px rgba(0,0,0,.25);
+}
+
+.logo{
+    width:50px;
+    height:50px;
+    object-fit:contain;
+}
+
+.navbar-brand{
+    font-size:28px;
+    font-weight:bold;
+}
+
+.navbar-brand span{
+    color:white;
+}
+
+.navbar-brand:hover{
+
+    transform:scale(1.03);
+
+}
+
+.navbar .btn{
+
+    border-radius:25px;
+
+}
+
+/* HERO */
+
+.hero{
+    height: 600px;
+    background-image: url("../imagens/hero.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    position: relative;
+}
+
+.hero::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,.45);
+}
+
+.hero div{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.hero h1{
+
+    color:white;
+
+    font-size:70px;
+
+    font-weight:bold;
+
+}
+
+.hero p{
+
+    color:white;
+
+    font-size:24px;
+
+}
+
+.hero .conteudo{
+    position: relative;
+    z-index: 2;
+}
+
+.hero .btn{
+    padding: 14px 35px;
+    font-size: 20px;
+    border-radius: 30px;
+    transition: .3s;
+}
+
+.hero .btn:hover{
+    transform: scale(1.08);
+}
+
+/* CARDS */
+
+.card{
+
+    border:none;
+
+    border-radius:15px;
+
+    transition:.3s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-6px);
+
+}
+
+.card{
+
+    transition: all .3s ease;
+
+}
+
+.card:hover{
+
+    transform: translateY(-8px);
+
+    box-shadow: 0 15px 30px rgba(0,0,0,.18);
+
+}
+
+.display-3{
+
+    font-size:60px;
+
+}
+
+/* TABELA */
+
+table{
+
+    background:white;
+
+}
+
+thead{
+
+    text-align:center;
+
+}
+
+tbody td{
+
+    vertical-align:middle;
+
+}
+
+img{
+
+    border-radius:10px;
+
+}
+
+.table{
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+}
+
+.table img{
+
+    width:60px;
+
+    height:60px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+}
+
+/* BOTÕES */
+
+.btn{
+
+    border-radius:8px;
+
+}
+
+/* TÍTULOS */
+
+h1{
+
+    font-weight:bold;
+
+}
+
+.card{
+
+    overflow:hidden;
+
+}
+
+.card h1{
+
+    font-size:55px;
+
+    margin-bottom:15px;
+
+}
+
+.card h2{
+
+    font-size:40px;
+
+    font-weight:bold;
+
+}
+
+.card p{
+
+    font-size:18px;
+
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 12px 25px rgba(0,0,0,.25);
+
+}
+
+.card-icon{
+
+    font-size:60px;
+
+    margin-bottom:15px;
+
+    display:block;
+
+}
+
+h2{
+
+    font-weight:700;
+
+}
+
+.text-muted{
+
+    font-size:18px;
+
+}
+
+
+
+
+/* TEMA CLARO */
+
+body.light {
+    background-color: #ffffff;
+    color: #111;
+}
+
+
+/* TEMA ESCURO */
+
+body.dark {
+    background-color: #111;
+    color: white;
+}
+
+
+/* Botão */
+
+#theme-toggle {
+    cursor: pointer;
+}
