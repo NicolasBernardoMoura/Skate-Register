@@ -16,7 +16,6 @@ Sistema web desenvolvido com Django para cadastro e gerenciamento de skatistas.
 - Django
 - HTML
 - CSS
-- JavaScript
 - SQLite
 
 ## Como executar
