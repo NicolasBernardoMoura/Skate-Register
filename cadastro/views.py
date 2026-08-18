@@ -107,7 +107,7 @@ def cadastrar_skatista(request):
 
 
 
-
+@login_required 
 def editar_skatista(request, id):
 
     skatista = get_object_or_404(Skatista, id=id)
@@ -142,7 +142,7 @@ def editar_skatista(request, id):
 
 
 
-
+@login_required 
 def excluir_skatista(request, id):
 
     skatista = get_object_or_404(Skatista, id=id)
