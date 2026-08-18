@@ -44,6 +44,31 @@
                     Cadastrar
                 </a>
 
+                {% if user.is_authenticated %}
+
+    <span class="navbar-text me-3">
+        Olá, {{ user.username }}!
+    </span>
+
+    <form method="post" action="{% url 'logout' %}" style="display: inline;">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-outline-danger">
+            Sair
+        </button>
+    </form>
+
+{% else %}
+
+    <a href="{% url 'login' %}" class="btn btn-outline-dark me-2">
+        Entrar
+    </a>
+
+    <a href="{% url 'cadastro_usuario' %}" class="btn btn-dark">
+        Criar conta
+    </a>
+
+{% endif %}
+
 
             </div>
 

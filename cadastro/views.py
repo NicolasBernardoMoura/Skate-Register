@@ -3,6 +3,25 @@ from .forms import SkatistaForm
 from django.shortcuts import get_object_or_404
 from .models import Skatista
 from django.db.models import Count
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required
+
+
+def cadastro_usuario(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+
+        if form.is_valid():
+            form.save()
+            return redirect('login')
+
+    else:
+        form = UserCreationForm()
+
+    return render(request, 'cadastro/cadastro_usuario.html', {
+        'form': form
+    })
+
 
 
 
@@ -55,7 +74,7 @@ def lista_skatistas(request):
 
 
 
-
+@login_required 
 def cadastrar_skatista(request):
 
     if request.method == 'POST':
